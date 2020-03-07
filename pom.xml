@@ -84,7 +84,7 @@
             <runDescription>Gatling Example</runDescription>
           <!--    <noReports>false</noReports> -->
           <!--   <reportsOnly>directoryName</reportsOnly> -->
-          <!--   <simulationClass>foo.Bar</simulationClass> -->
+             <simulationClass>test.ApiParallelSimulation</simulationClass>
           <!--   <jvmArgs> -->
           <!--     <jvmArg>-DmyExtraParam=foo</jvmArg> -->
           <!--   </jvmArgs> -->

@@ -6,7 +6,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 
-class RecordedSimulation extends Simulation {
+class ApiParallelSimulation extends Simulation {
 
 	val httpProtocol = http
 		.baseUrl("http://localhost:3000")
@@ -25,13 +25,16 @@ class RecordedSimulation extends Simulation {
 	val scn = scenario("ApiParallelSimulation")
 		.exec(http("request_0")
 			.get("/")
-			.headers(headers_0))
+			.headers(headers_0)
+		)
 		.exec(http("request_1")
 			.get("/login")
-			.headers(headers_0))
-		.exec(http("request_2")
-			.get("/user")
-			.headers(headers_0))
+			.headers(headers_0)
+			.resources(
+				http("request_2_parallel").get("/user").headers(headers_0),
+				http("request async 2").get("/posts").headers(headers_0)
+			)
+		)
 
 	setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
 }
