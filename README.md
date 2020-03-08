@@ -26,3 +26,9 @@ mvn clean gatling:test
 ``` bash
 jmeter -n -t [jmx file path] -l [results file path] -e -o [web report path]
 ```
+
+If you want to change JMeter data format in report file, just override the properties in the jmeter file **user.properties** with the date format you want:
+
+``` bash
+jmeter.save.saveservice.timestamp_format=yyyy/MM/dd HH:mm:ss.SSS
+```
