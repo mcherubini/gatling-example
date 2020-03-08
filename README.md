@@ -1,11 +1,11 @@
-### Launch Api
+### Launch API
 
 Node 13.10.1 is required
 
 After installing package.json dependencies, you can run api with the command:
 
 ``` bash
-npm run install
+npm run start
 ```
 
 ### Launch Gatling
@@ -22,7 +22,7 @@ mvn clean gatling:test
  Jmeter 5.1.1 is required and **Plugin Manager** installed with plugin **Parallel Controller & Sampler**
 
  You can use the next command to generate the web report:
- 
+
 ``` bash
 jmeter -n -t [jmx file path] -l [results file path] -e -o [web report path]
 ```
