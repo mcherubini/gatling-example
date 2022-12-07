@@ -15,7 +15,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/webrolera/default-micro#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-simulate-latency": "0.0.2"
   }
 }
